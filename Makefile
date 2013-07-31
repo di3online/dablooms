@@ -122,7 +122,7 @@ $(patsubst %, $(BLDDIR)/%, $(LIB_SYMLNKS)): %: $(BLDDIR)/libdablooms.$(SO_EXT)
 
 $(BLDDIR)/test_dablooms: $(OBJS_TESTS) $(BLDDIR)/libdablooms.a
 	@echo " LD " $@
-	@$(CC) -o $@ $(ALL_CFLAGS) $(ALL_LDFLAGS) $(OBJS_TESTS) $(BLDDIR)/libdablooms.a
+	@$(CC) -o $@ $(ALL_CFLAGS) $(OBJS_TESTS) $(BLDDIR)/libdablooms.a $(ALL_LDFLAGS) 
 
 test: $(BLDDIR)/test_dablooms
 	@$(BLDDIR)/test_dablooms $(BLDDIR)/testbloom.bin $(WORDS)
